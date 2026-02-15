@@ -59,10 +59,7 @@ python scripts/run_checks.py
 ```
 
 ## Screenshots
-Add screenshots after first public push:
-- `docs/screenshots/launcher.png`
-- `docs/screenshots/palette-goblin.png`
-- `docs/screenshots/sort-goblin.png`
+Coming soon.
 
 ## Roadmap
 - v1: Tkinter suite hardening and UX consistency.
