@@ -1,0 +1,40 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Tool/runtime temp
+tmp*/
+*.tmp
+*.log
+*.bak
+v1preshipbackup/
+
+# Local data / machine-specific
+.palette_goblin_hoard.json
+.env
+.env.*
+.python-version
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

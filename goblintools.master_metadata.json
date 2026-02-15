@@ -1,0 +1,233 @@
+{
+  "schema_version": "1.1.0",
+  "generated_on": "2026-02-15",
+  "updated_on": "2026-02-15",
+  "creator": {
+    "handle": "PocketGoblin",
+    "display_name": "PocketGoblin",
+    "contact": null
+  },
+  "parent_system": {
+    "id": "pockettools",
+    "project_id": "goblintools",
+    "lineage": "goblintools",
+    "channel": "v1"
+  },
+  "suite": {
+    "id": "goblintools",
+    "name": "GoblinTools",
+    "display_name": "GoblinTools",
+    "slug": "goblintoolsv1",
+    "path": "goblintoolsv1",
+    "version": "1.0.0",
+    "lifecycle_status": "active",
+    "build_stamp": "v1.0.0",
+    "license": "MIT",
+    "repo": "github:PocketGoblin/goblintools",
+    "homepage": null,
+    "entrypoints": {
+      "cli": "python -m goblintools",
+      "module": "goblintools",
+      "default_component": "launcher"
+    },
+    "entrypoint": {
+      "path": "main.py",
+      "callable": "launch",
+      "module": "goblintools.launcher.app"
+    },
+    "python_version_min": "3.9",
+    "platform_support": {
+      "windows": "tested",
+      "macos": "unknown",
+      "linux": "unknown"
+    },
+    "packaging": {
+      "type": "pyinstaller",
+      "artifacts": [
+        "exe",
+        "zip_portable"
+      ]
+    },
+    "capabilities": [
+      "file_sorting",
+      "batch_rename",
+      "palette_extract",
+      "archive_manage",
+      "sprite_slice"
+    ],
+    "dependencies": [
+      {
+        "name": "python",
+        "required": true,
+        "constraint": ">=3.9"
+      },
+      {
+        "name": "pillow",
+        "required": true,
+        "constraint": "*"
+      },
+      {
+        "name": "rembg",
+        "required": false,
+        "constraint": "*",
+        "used_by": [
+          "slicer_goblin"
+        ],
+        "notes": "Optional background removal"
+      }
+    ]
+  },
+  "tools": [
+    {
+      "tool_id": "launcher",
+      "name": "Launcher",
+      "display_name": "GoblinTools Launcher",
+      "glyph": "HUB",
+      "description": "launch and manage GoblinTools",
+      "version": "1.0.0",
+      "status": "stable",
+      "lifecycle_status": "active",
+      "experimental": false,
+      "enabled": true,
+      "category": "suite",
+      "capabilities": [
+        "workspace",
+        "favorites"
+      ],
+      "entrypoint": {
+        "module": "goblintools.launcher.app",
+        "callable": "launch",
+        "open_window_callable": null
+      }
+    },
+    {
+      "tool_id": "palette_goblin",
+      "name": "Palette Goblin",
+      "display_name": "Palette Goblin",
+      "glyph": "PAL",
+      "description": "extract palettes",
+      "version": "1.0.0",
+      "status": "stable",
+      "lifecycle_status": "active",
+      "experimental": false,
+      "enabled": true,
+      "category": "art_pipeline",
+      "capabilities": [
+        "palette_extract"
+      ],
+      "entrypoint": {
+        "module": "goblintools.palette_goblin.app",
+        "callable": "main",
+        "open_window_callable": "open_tool_window"
+      }
+    },
+    {
+      "tool_id": "slicer_goblin",
+      "name": "Slicer Goblin",
+      "display_name": "Slicer Goblin",
+      "glyph": "SLC",
+      "description": "slice sprite sheets",
+      "version": "1.0.0",
+      "status": "stable",
+      "lifecycle_status": "active",
+      "experimental": false,
+      "enabled": true,
+      "category": "art_pipeline",
+      "capabilities": [
+        "sprite_slice"
+      ],
+      "entrypoint": {
+        "module": "goblintools.slicer_goblin.app",
+        "callable": "run",
+        "open_window_callable": "open_tool_window"
+      }
+    },
+    {
+      "tool_id": "zip_goblin",
+      "name": "Zip Goblin",
+      "display_name": "Zip Goblin",
+      "glyph": "ZIP",
+      "description": "extract archives / pack zip or 7z",
+      "version": "1.0.0",
+      "status": "stable",
+      "lifecycle_status": "active",
+      "experimental": false,
+      "enabled": true,
+      "category": "file_ops",
+      "capabilities": [
+        "archive_manage"
+      ],
+      "entrypoint": {
+        "module": "goblintools.tools.zip_goblin_window",
+        "callable": null,
+        "open_window_callable": "open_tool_window"
+      }
+    },
+    {
+      "tool_id": "sort_goblin",
+      "name": "Sort Goblin",
+      "display_name": "Sort Goblin",
+      "glyph": "SRT",
+      "description": "sort + rename safely",
+      "version": "1.0.0",
+      "status": "stable",
+      "lifecycle_status": "active",
+      "experimental": false,
+      "enabled": true,
+      "category": "file_ops",
+      "capabilities": [
+        "file_sorting",
+        "batch_rename"
+      ],
+      "entrypoint": {
+        "module": "goblintools.tools.sort_goblin_window",
+        "callable": null,
+        "open_window_callable": "open_tool_window"
+      }
+    },
+    {
+      "tool_id": "error_goblin",
+      "name": "Error Goblin",
+      "display_name": "Error Goblin",
+      "glyph": "ERR",
+      "description": "decode engine errors",
+      "version": "1.0.0",
+      "status": "experimental",
+      "lifecycle_status": "wip",
+      "experimental": true,
+      "enabled": true,
+      "category": "debug_assist",
+      "capabilities": [
+        "debug_assist"
+      ],
+      "entrypoint": {
+        "module": "goblintools.tools.error_goblin_window",
+        "callable": null,
+        "open_window_callable": "open_tool_window"
+      },
+      "notes": "Higher setup and finagling risk than other tools; recommended to present as experimental in v1 UI."
+    },
+    {
+      "tool_id": "rename_goblin",
+      "name": "Rename Goblin",
+      "display_name": "Rename Goblin (Legacy Window)",
+      "glyph": "REN",
+      "description": "legacy rename workflow window",
+      "version": "1.0.0",
+      "status": "legacy",
+      "lifecycle_status": "deprecated",
+      "experimental": false,
+      "enabled": false,
+      "category": "file_ops",
+      "capabilities": [
+        "batch_rename"
+      ],
+      "entrypoint": {
+        "module": "goblintools.tools.rename_goblin_window",
+        "callable": null,
+        "open_window_callable": "open_tool_window"
+      },
+      "notes": "Legacy/alternate window not listed in current launcher cards."
+    }
+  ]
+}
